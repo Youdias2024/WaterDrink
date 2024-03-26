@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WaterDrink.ViewModel;
 
 namespace WaterDrink
 {
@@ -19,6 +20,11 @@ namespace WaterDrink
         public MainWindow()
         {
             InitializeComponent();
+
+            WaterDrink.View.WaterDrink waterDrink = new WaterDrink.View.WaterDrink();
+
+            UserControlHost.Content = waterDrink;
+            
         }
     }
 }

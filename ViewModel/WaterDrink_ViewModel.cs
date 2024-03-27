@@ -17,8 +17,7 @@ namespace WaterDrink.ViewModel
         // 
         
         // 当前时间，精确到秒
-        [ObservableProperty]
-        //private DateTime currentTime = DateTime.Now;
+        [ObservableProperty]        
         private DateTime currentTime = new DateTime();
         // 时间轴进度条
         [ObservableProperty]
@@ -26,16 +25,29 @@ namespace WaterDrink.ViewModel
 
         // 6个进度条
         [ObservableProperty]
-        private double[] process = { 0 };
+        private double[] process = new double[6];
 
 
-        private RelayCommand _btnExit;
-        public RelayCommand ButtonExit => _btnExit ??= new RelayCommand(Exit);
 
-        [RelayCommand]
-        private void Exit()
+
+        // ！函数名称ButtonExit，绑定的是ButtonExitCommand
+        [RelayCommand] 
+        private void ButtonExit()
         {
             Environment.Exit(0);
+        }
+
+
+        [RelayCommand]        
+        public void ButtonStart()
+        {
+            // 开启定时器，定时更新            
+        }
+        
+        private void Update()
+        {
+            // 更新数据
+
         }
     }
 }

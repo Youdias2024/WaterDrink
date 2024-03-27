@@ -4,27 +4,28 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:hc="https://handyorg.github.io/handycontrol"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WaterDrink.View"             
+             xmlns:local="clr-namespace:WaterDrink.View" xmlns:viewmodel="clr-namespace:WaterDrink.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:WaterDrink_ViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <hc:TransitioningContentControl>
+        <Grid HorizontalAlignment="Center" Width="800" Margin="0,-5,0,5">
+            <Button Content="开始" Command="{Binding ButtonStart}" HorizontalAlignment="Left" Height="60" Margin="10,3,0,0" VerticalAlignment="Top" Width="162"/>
+            <Button Content="退出" Command="{Binding ButtonExit}" HorizontalAlignment="Left" Height="60" Margin="644,3,0,0" VerticalAlignment="Top" Width="146"/>
 
-    <hc:SimpleStackPanel>
-        <hc:Row Margin="0,5,0,0" Height="40" Background="Gray" >
-            <hc:Col Width="100" HorizontalAlignment="Left">
-                <hc:ButtonGroup Orientation="Vertical">
-                    <Button Content="开始" Command="{Binding Start}"/>
-                    <Button Content="退出" Command="{Binding Exit}"/>
-                </hc:ButtonGroup>
-            </hc:Col>
-        </hc:Row>
-        <hc:Row Margin="0,5,0,0" Height="150" Background="Green">
+            <hc:Divider Margin="106,80,110,13" LineStrokeThickness="5"/>
+            <hc:TimeBar TimeFormat="HH:mm:ss" SelectedTime="15:20:00"  Background="Cyan" HorizontalAlignment="Center" Margin="0,102,0,0" VerticalAlignment="Top" Height="61" Width="748"/>
+            <hc:Divider Margin="-9,182,9,-134" LineStrokeThickness="5"/>
 
-        </hc:Row>
-        <hc:Row Margin="0,5,0,0" Height="220" Background="Red">
-            
-        </hc:Row>
-        
-            
+            <hc:Divider Margin="-145,225,145,10" Orientation="Vertical" LineStrokeThickness="5" RenderTransformOrigin="0.469,0.512"/>
+            <hc:Divider Margin="271,209,-271,26" Orientation="Vertical" LineStrokeThickness="5" RenderTransformOrigin="0.706,0.512"/>
 
-    </hc:SimpleStackPanel>
+            <ProgressBar Style="{StaticResource ProgressBarSuccess}" Value="40" Orientation="Vertical" Width="20" Margin="67,204,713,21"/>
+            <ProgressBar Style="{StaticResource ProgressBarSuccess}" Value="40" Orientation="Vertical" Width="20" Margin="178,204,602,21"/>
+            <ProgressBar Style="{StaticResource ProgressBarSuccess}" Value="40" Orientation="Vertical" Width="20" Margin="335,204,445,21"/>
+            <ProgressBar Style="{StaticResource ProgressBarSuccess}" Value="40" Orientation="Vertical" Width="20" Margin="453,204,327,21"/>
+            <ProgressBar Style="{StaticResource ProgressBarSuccess}" Value="40" Orientation="Vertical" Width="20" Margin="578,204,202,21"/>
+            <ProgressBar Style="{StaticResource ProgressBarSuccess}" Value="40" Orientation="Vertical" Width="20" Margin="724,204,56,21"/>
+
+        </Grid>
+    </hc:TransitioningContentControl>
 </UserControl>

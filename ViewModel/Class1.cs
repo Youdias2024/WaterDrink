@@ -24,7 +24,7 @@ namespace WaterDrink.ViewModel
 
         // 当前时间，精确到秒
         [ObservableProperty]
-        private string currentTime = DateTime.Now.ToString("dd:HH:ss");
+        private DateTime currentTime = DateTime.Now;
         // 时间轴进度条
         [ObservableProperty]
         private double timeLine = 0;

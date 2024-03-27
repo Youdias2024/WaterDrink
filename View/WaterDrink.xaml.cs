@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HandyControl.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WaterDrink.ViewModel;
 
 namespace WaterDrink.View
 {
@@ -23,6 +25,8 @@ namespace WaterDrink.View
         public WaterDrink()
         {
             InitializeComponent();
+
+            this.DataContext = new WaterDrink_ViewModel();
         }
     }
 }

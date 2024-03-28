@@ -13,23 +13,18 @@
             <Button Content="退出" Command="{Binding ButtonExitCommand}" HorizontalAlignment="Left" Height="60" Margin="644,3,0,0" VerticalAlignment="Top" Width="146"/>
 
             <hc:Divider Margin="106,80,110,13" LineStrokeThickness="5"/>
-            <!--<hc:TimeBar Name="MyTimeBar" TimeFormat="yyyy-MM-dd HH:mm:ss" SelectedTime="1234-5-6 1:2:3"  Background="Cyan" HorizontalAlignment="Center" Margin="0,102,0,0" VerticalAlignment="Top" Height="61" Width="748"/>-->
             <hc:TimeBar Name="MyTimeBar" TimeFormat="yyyy-MM-dd HH:mm:ss" SelectedTime="{Binding CurrentTime}"  Background="Cyan" HorizontalAlignment="Center" Margin="0,102,0,0" VerticalAlignment="Top" Height="61" Width="748"/>
-            <!--<hc:TimeBar Name="TimeBarDemo" SelectedTime="{Binding CurrentTime}"  Background="Cyan" HorizontalAlignment="Center" Margin="0,102,0,0" VerticalAlignment="Top" Height="61" Width="748"/>-->
             <hc:Divider Margin="-9,182,9,-134" LineStrokeThickness="5"/>
 
             <hc:Divider Margin="-145,225,145,10" Orientation="Vertical" LineStrokeThickness="5" RenderTransformOrigin="0.469,0.512"/>
             <hc:Divider Margin="271,209,-271,26" Orientation="Vertical" LineStrokeThickness="5" RenderTransformOrigin="0.706,0.512"/>
-
 
             <ProgressBar Style="{StaticResource ProgressBarSuccess}" Value="{Binding Process[0]}" Orientation="Vertical" Width="20" Margin="67,204,713,21"/>
             <ProgressBar Style="{StaticResource ProgressBarSuccess}" Value="{Binding Process[1]}" Orientation="Vertical" Width="20" Margin="178,204,602,21"/>
             <ProgressBar Style="{StaticResource ProgressBarSuccess}" Value="{Binding Process[2]}" Orientation="Vertical" Width="20" Margin="335,204,445,21"/>
             <ProgressBar Style="{StaticResource ProgressBarSuccess}" Value="{Binding Process[3]}" Orientation="Vertical" Width="20" Margin="453,204,327,21"/>
             <ProgressBar Style="{StaticResource ProgressBarSuccess}" Value="{Binding Process[4]}" Orientation="Vertical" Width="20" Margin="578,204,202,21"/>
-            <ProgressBar Style="{StaticResource ProgressBarSuccess}" Value="{Binding Process1}" Orientation="Vertical" Width="20" Margin="724,204,56,21"/>
-            <!--<hc:TextBox HorizontalAlignment="Left" Height="42" Margin="262,33,0,0" TextWrapping="Wrap" Text="{Binding ElementName=MyTimeBar, Path=SelectedTime}" VerticalAlignment="Top" Width="173"/>-->
-            <hc:TextBox Name="myTextBox" HorizontalAlignment="Left" Height="42" Margin="262,33,0,0" TextWrapping="Wrap" Text="{Binding ElementName=MyTimeBar, Path=SelectedTime, Mode=TwoWay}" VerticalAlignment="Top" Width="173"/>
+            <ProgressBar Style="{StaticResource ProgressBarSuccess}" Value="{Binding Process[5]}" Orientation="Vertical" Width="20" Margin="724,204,56,21"/>
 
         </Grid>
     </hc:TransitioningContentControl>

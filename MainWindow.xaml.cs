@@ -24,6 +24,8 @@ namespace WaterDrink
             InitializeComponent();
             WaterDrink.View.WaterDrink waterDrink = new WaterDrink.View.WaterDrink();
             UserControlHost.Content = waterDrink;
+            
+            
         }
     }
 }

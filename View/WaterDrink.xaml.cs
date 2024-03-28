@@ -18,6 +18,7 @@ using WaterDrink.ViewModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Windows.Threading;
+using System.ComponentModel.Design;
 
 namespace WaterDrink.View
 {
@@ -32,9 +33,12 @@ namespace WaterDrink.View
         {
             MyTimeBar.SelectedTime = vm.CurrentTime;
         }
+        // TODO# 页面关闭的时候最好需要关闭定时器，可以用命令聚合器处理。暂不处理
+
         public WaterDrink()
         {
             InitializeComponent();
+            
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Update;
             timer.Start();

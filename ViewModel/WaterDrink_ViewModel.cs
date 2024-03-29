@@ -83,6 +83,13 @@ namespace WaterDrink.ViewModel
             //将时间转换为数字
             string timeStr = time.ToString("HHmm");
             int timeInt = int.Parse(timeStr);
+            if(timeInt <=0030) // 1 软件初次启动所有进度都会清零，如果连续运行超过1天，过了12点也会给清零
+            {
+                for(int i=0;i<Process.Count;i++)
+                {
+                    Process[i] = 0;
+                }
+            }
             // 现在得到了时间 1534，查找对应的段，如果还没到开始，
             for (int i = 0; i < timeBars.Count; i++)
             {

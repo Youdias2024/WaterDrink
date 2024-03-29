@@ -19,6 +19,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Windows.Threading;
 using System.ComponentModel.Design;
+using Microsoft.VisualBasic;
 
 namespace WaterDrink.View
 {
@@ -32,6 +33,16 @@ namespace WaterDrink.View
         private void Update(object? sender, EventArgs e)
         {
             MyTimeBar.SelectedTime = vm.CurrentTime;
+            //0000-0001初始化新的一天
+            string timeStr = vm.CurrentTime.ToString("HHmm");
+            if (int.Parse(timeStr)>=0 && int.Parse(timeStr)<=1)
+            {
+                DateTime beginTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                DateTimeRange dtR = new DateTimeRange();
+                dtR.Start = beginTime.AddHours(9);
+                dtR.End = beginTime.AddHours(20);
+                MyTimeBar.Hotspots.Add(dtR);
+            }
         }
         // TODO# 页面关闭的时候最好需要关闭定时器，可以用命令聚合器处理。暂不处理
 
@@ -48,11 +59,14 @@ namespace WaterDrink.View
 
             MyTimeBar.SelectedTime = vm.CurrentTime;
 
-            //MyTimeBar.SetBinding(TimeBar.SelectedTimeProperty, new Binding("CurrentTime")
-            //{
-            //    Source = this.DataContext,
-            //    Mode = BindingMode.TwoWay
-            //});
+            // 首次启动，将当天的0900-2000设置为热点区
+            DateTime beginTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            DateTimeRange dtR = new DateTimeRange();
+            dtR.Start = beginTime.AddHours(9);
+            dtR.End = beginTime.AddHours(20);
+            MyTimeBar.Hotspots.Add(dtR);
+            
+
 
             // MyTimeBar.SelectedTime = "1234-5-6 12:23:32";
 
